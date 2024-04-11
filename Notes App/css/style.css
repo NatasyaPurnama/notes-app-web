@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #222831;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+#app {
+  background-color: #31363f;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  animation: slideIn 0.5s ease;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+app-bar h1 {
+  color: #eeeeee;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 20px 0;
+  background-color: #31363f;
+}
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex: 1;
+}
+
+.notes-container:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.note {
+  background-color: #76abae;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.note h2 {
+  margin-top: 0;
+  color: #3c3c3c;
+}
+
+.note p {
+  color: #555;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  resize: none;
+  margin-top: 5px;
+}
+
+textarea:focus {
+  border-color: #76abae;
+  outline: none;
+  box-shadow: 0 0 5px rgba(118, 171, 174, 0.5);
+}
+
+button.add-note {
+  margin-top: 10px;
+  background-color: #76abae;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button.add-note:hover {
+  background-color: #fff;
+  color: #222831;
+}
+
+button.add-note:focus {
+  outline: none;
+}
+
+button.add-note i {
+  margin-right: 5px;
+}
+
+/* Animasi tambahan */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button.add-note.animated {
+  animation: pulse 1s infinite;
+}
+
+.edit-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.edit-buttons button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 5px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.edit-buttons button:hover {
+  color: #333;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
