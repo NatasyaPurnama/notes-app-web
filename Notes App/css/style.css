@@ -125,7 +125,6 @@ button.add-note i {
   margin-right: 5px;
 }
 
-/* Animasi tambahan */
 @keyframes pulse {
   0% {
     transform: scale(1);
